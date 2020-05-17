@@ -1,6 +1,5 @@
 numpy
 ipywidgets
 nbinteract
-CPython 3.7.6
 IPython 7.14.0
 skyfield 1.20
