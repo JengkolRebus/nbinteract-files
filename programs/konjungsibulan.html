@@ -13112,6 +13112,13 @@ div#notebook {
 
 
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Menampilkan-Waktu-&amp;-Posisi-Hilal-dari-Suatu-Tempat">Menampilkan Waktu &amp; Posisi Hilal dari Suatu Tempat<a class="anchor-link" href="#Menampilkan-Waktu-&amp;-Posisi-Hilal-dari-Suatu-Tempat">&#182;</a></h1><hr>
+
+</div>
+</div>
+</div>
 
   
 
@@ -13142,8 +13149,7 @@ div#notebook {
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">skyfield.api</span> <span class="kn">import</span> <span class="n">load</span><span class="p">,</span> <span class="n">Topos</span>
 <span class="kn">from</span> <span class="nn">skyfield</span> <span class="kn">import</span> <span class="n">almanac</span>
-<span class="kn">import</span> <span class="nn">datetime</span>
-<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">timedelta</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span>
 <span class="kn">from</span> <span class="nn">pytz</span> <span class="kn">import</span> <span class="n">timezone</span>
 <span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interact</span>
 <span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">widgets</span> <span class="k">as</span> <span class="n">wg</span>
@@ -13194,7 +13200,10 @@ div#notebook {
 
 <span class="n">bulan</span> <span class="o">=</span> <span class="n">e</span><span class="p">[</span><span class="s1">&#39;moon&#39;</span><span class="p">]</span>
 <span class="n">bumi</span> <span class="o">=</span> <span class="n">e</span><span class="p">[</span><span class="s1">&#39;earth&#39;</span><span class="p">]</span>
-<span class="n">obsUAD</span> <span class="o">=</span> <span class="n">Topos</span><span class="p">(</span><span class="s1">&#39;7.83305556 S&#39;</span><span class="p">,</span> <span class="s1">&#39;110.38305556 E&#39;</span><span class="p">)</span>
+
+<span class="n">lat</span> <span class="o">=</span> <span class="s1">&#39;7.83305556 S&#39;</span>
+<span class="n">long</span> <span class="o">=</span> <span class="s1">&#39;110.38305556 E&#39;</span>
+<span class="n">obsUAD</span> <span class="o">=</span> <span class="n">Topos</span><span class="p">(</span><span class="n">lat</span><span class="p">,</span> <span class="n">long</span><span class="p">)</span>
 <span class="n">loc</span> <span class="o">=</span> <span class="n">bumi</span> <span class="o">+</span> <span class="n">obsUAD</span>
 </pre></div>
 
@@ -13244,10 +13253,10 @@ div#notebook {
                     <span class="n">alt_bulan</span><span class="p">,</span> <span class="n">az_bulan</span><span class="p">,</span> <span class="n">jarak_bulan</span> <span class="o">=</span> <span class="n">astrometrik_bulan</span><span class="o">.</span><span class="n">apparent</span><span class="p">()</span><span class="o">.</span><span class="n">altaz</span><span class="p">()</span>
                     <span class="n">alt_matahari</span><span class="p">,</span> <span class="n">az_matahari</span><span class="p">,</span> <span class="n">jarak_matahari</span> <span class="o">=</span> <span class="n">astrometrik_matahari</span><span class="o">.</span><span class="n">apparent</span><span class="p">()</span><span class="o">.</span><span class="n">altaz</span><span class="p">()</span>
 
-                    <span class="n">bulan_alt</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">alt_bulan</span><span class="o">.</span><span class="n">degrees</span><span class="p">)</span>
-                    <span class="n">bulan_az</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">az_bulan</span><span class="o">.</span><span class="n">degrees</span><span class="p">)</span>
-                    <span class="n">matahari_alt</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">alt_matahari</span><span class="o">.</span><span class="n">degrees</span><span class="p">)</span>
-                    <span class="n">matahari_az</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">az_matahari</span><span class="o">.</span><span class="n">degrees</span><span class="p">)</span>
+                    <span class="n">bulan_alt</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">alt_bulan</span><span class="p">)</span>
+                    <span class="n">bulan_az</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">az_bulan</span><span class="p">)</span>
+                    <span class="n">matahari_alt</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">alt_matahari</span><span class="p">)</span>
+                    <span class="n">matahari_az</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">az_matahari</span><span class="p">)</span>
                     
 <span class="c1">#                     tabel = list(zip(conj, sunset, bulan_alt, bulan_az, matahari_alt, matahari_az))</span>
 <span class="c1">#                     df = pd.DataFrame(tabel, columns=[&#39;Waktu Konjungsi (UTC+07)&#39;, &#39;Waktu Hilal (UTC+07)&#39;, &#39;Altitude Bulan&#39;, &#39;Azimuth Bulan&#39;, &#39;Altitude Matahari&#39;, &#39;Azimuth Matahari&#39;])</span>
@@ -13281,9 +13290,12 @@ div#notebook {
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">hari_ini</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">date</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">hari_ini</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">date</span><span class="p">()</span>
 <span class="n">days_in_month</span> <span class="o">=</span> <span class="n">calendar</span><span class="o">.</span><span class="n">monthrange</span><span class="p">(</span><span class="n">hari_ini</span><span class="o">.</span><span class="n">year</span><span class="p">,</span> <span class="n">hari_ini</span><span class="o">.</span><span class="n">month</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
 <span class="n">besok</span> <span class="o">=</span> <span class="n">hari_ini</span> <span class="o">+</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days_in_month</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Latitude: &#39;</span><span class="p">,</span> <span class="n">lat</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Longitude: &#39;</span><span class="p">,</span> <span class="n">long</span><span class="p">)</span>
 
 <span class="n">dari</span> <span class="o">=</span> <span class="n">wg</span><span class="o">.</span><span class="n">DatePicker</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="n">hari_ini</span><span class="p">,</span>
     <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Dari:&#39;</span><span class="p">,</span>
@@ -13293,7 +13305,7 @@ div#notebook {
     <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Sampai:&#39;</span><span class="p">,</span>
     <span class="n">disabled</span><span class="o">=</span><span class="kc">False</span>
 <span class="p">)</span>
-<span class="n">wg</span><span class="o">.</span><span class="n">interact</span><span class="p">(</span><span class="n">konjungsi</span><span class="p">,</span> <span class="n">t0</span><span class="o">=</span><span class="n">dari</span><span class="p">,</span> <span class="n">t1</span><span class="o">=</span><span class="n">sampai</span><span class="p">)</span>
+<span class="n">wg</span><span class="o">.</span><span class="n">interactive</span><span class="p">(</span><span class="n">konjungsi</span><span class="p">,</span> <span class="n">t0</span><span class="o">=</span><span class="n">dari</span><span class="p">,</span> <span class="n">t1</span><span class="o">=</span><span class="n">sampai</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13303,6 +13315,17 @@ div#notebook {
 <div class="output_wrapper">
 <div class="output">
 
+
+<div class="output_area">
+
+    
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Latitude:  7.83305556 S
+Longitude:  110.38305556 E
+</pre>
+</div>
+</div>
 
 <div class="output_area">
 
@@ -13318,16 +13341,64 @@ div#notebook {
 
 </div>
 
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># from skyfield.api import load, Topos</span>
+<span class="c1"># from skyfield import almanac</span>
+<span class="c1"># import datetime</span>
+<span class="c1"># from datetime import timedelta</span>
+<span class="c1"># from pytz import timezone</span>
+<span class="c1"># from ipywidgets import interact</span>
+<span class="c1"># from ipywidgets import widgets as wg</span>
+<span class="c1"># import calendar</span>
+<span class="c1"># import pandas as pd</span>
+<span class="c1"># from IPython.display import display, HTML</span>
+
+<span class="o">%</span><span class="k">load_ext</span> watermark
+
+<span class="o">%</span><span class="k">watermark</span> -v -m -p skyfield
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
 <div class="output_area">
 
     
 
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>The watermark extension is already loaded. To reload it, use:
+  %reload_ext watermark
+CPython 3.7.6
+IPython 7.14.0
 
+skyfield 1.20
 
-<div class="output_text output_subarea output_execute_result">
-<pre>&lt;function __main__.konjungsi(t0, t1)&gt;</pre>
+compiler   : MSC v.1916 64 bit (AMD64)
+system     : Windows
+release    : 10
+machine    : AMD64
+processor  : Intel64 Family 6 Model 58 Stepping 9, GenuineIntel
+CPU cores  : 4
+interpreter: 64bit
+</pre>
 </div>
-
 </div>
 
 </div>
