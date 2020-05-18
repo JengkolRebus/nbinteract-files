@@ -13206,12 +13206,57 @@ div#notebook {
 
 <div class="inner_cell">
     <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">var</span><span class="p">:</span>
+    
+    <span class="k">def</span> <span class="fm">__init__</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">loc</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">loc</span> <span class="o">=</span> <span class="n">loc</span>
+        
+<span class="n">loc</span> <span class="o">=</span> <span class="n">obsUAD</span> <span class="o">+</span> <span class="n">bumi</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">var</span><span class="p">(</span><span class="n">loc</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">loc</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Sum of 3 vectors:
+ + Segment &#39;de421.bsp&#39; 0 SOLAR SYSTEM BARYCENTER -&gt; 3 EARTH BARYCENTER
+ + Segment &#39;de421.bsp&#39; 3 EARTH BARYCENTER -&gt; 399 EARTH
+ + Topos -07deg 49&#39; 59.0&#34; N 110deg 22&#39; 59.0&#34; E
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">getTopos</span><span class="p">(</span><span class="n">Latitude</span><span class="p">,</span> <span class="n">Longitude</span><span class="p">):</span>
     <span class="k">global</span> <span class="n">obsUAD</span>
     <span class="n">lat</span><span class="o">=</span><span class="n">Latitude</span>
     <span class="n">long</span><span class="o">=</span><span class="n">Longitude</span>
     <span class="n">obsUAD</span> <span class="o">=</span> <span class="n">Topos</span><span class="p">(</span><span class="n">lat</span><span class="p">,</span> <span class="n">long</span><span class="p">)</span>
-    <span class="n">loc</span> <span class="o">=</span> <span class="n">bumi</span> <span class="o">+</span> <span class="n">obsUAD</span>
+    <span class="n">loc</span> <span class="o">=</span> <span class="n">obsUAD</span> <span class="o">+</span> <span class="n">bumi</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">var</span><span class="p">(</span><span class="n">loc</span><span class="p">)</span>
     <span class="n">interact</span><span class="p">(</span><span class="n">konjungsi</span><span class="p">,</span> <span class="n">t0</span><span class="o">=</span><span class="n">dari</span><span class="p">,</span> <span class="n">t1</span><span class="o">=</span><span class="n">sampai</span><span class="p">)</span>
 
 <span class="c1"># fungsi mendapatkan waktu konjungsi</span>
@@ -13237,6 +13282,7 @@ div#notebook {
             <span class="n">t_rs</span><span class="p">,</span> <span class="n">y_rs</span> <span class="o">=</span> <span class="n">almanac</span><span class="o">.</span><span class="n">find_discrete</span><span class="p">(</span><span class="n">t0</span><span class="p">,</span> <span class="n">t1</span><span class="p">,</span> <span class="n">almanac</span><span class="o">.</span><span class="n">sunrise_sunset</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">obsUAD</span><span class="p">))</span>
             <span class="k">for</span> <span class="n">t_sun</span><span class="p">,</span> <span class="n">y_sun</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">t_rs</span><span class="p">,</span> <span class="n">y_rs</span><span class="p">):</span>
                 <span class="k">if</span> <span class="p">(</span><span class="n">y_sun</span> <span class="o">==</span> <span class="kc">False</span><span class="p">):</span>
+                    <span class="n">loc</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">loc</span>
                     <span class="n">sunset</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">t_sun</span><span class="o">.</span><span class="n">astimezone</span><span class="p">(</span><span class="n">jkt</span><span class="p">))</span>
                     <span class="n">t</span> <span class="o">=</span> <span class="n">t_sun</span><span class="o">.</span><span class="n">utc</span>
     
@@ -13337,40 +13383,6 @@ div#notebook {
 
 </div>
 
-</div>
-</div>
-
-  </div>
-
-  
-
-  <div class="
-      cell border-box-sizing code_cell rendered">
-    <div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-  </div>
-
-  
-
-  <div class="
-      cell border-box-sizing code_cell rendered">
-    <div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-    </div>
 </div>
 </div>
 
