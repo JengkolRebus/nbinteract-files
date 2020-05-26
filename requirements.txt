@@ -3,6 +3,4 @@ ipywidgets
 nbinteract
 skyfield
 cpython
-ipython 
-watermark
-calendar
+ipython
