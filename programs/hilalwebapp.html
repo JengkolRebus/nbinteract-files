@@ -13170,11 +13170,15 @@ div#notebook {
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">tanggal</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">find</span><span class="p">(</span><span class="n">t0</span><span class="p">,</span> <span class="n">t1</span><span class="p">):</span>
+    <span class="n">t0</span> <span class="o">=</span> <span class="n">ts</span><span class="o">.</span><span class="n">utc</span><span class="p">(</span><span class="n">t0</span><span class="p">)</span>
+    <span class="n">t1</span> <span class="o">=</span> <span class="n">ts</span><span class="o">.</span><span class="n">utc</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="n">t0</span><span class="p">,</span> <span class="n">t1</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">find</span><span class="p">(</span><span class="n">Latitude</span><span class="p">,</span> <span class="n">Longitude</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">loc</span><span class="p">(</span><span class="n">Latitude</span><span class="p">,</span> <span class="n">Longitude</span><span class="p">):</span>
     <span class="n">topo</span> <span class="o">=</span> <span class="n">Topos</span><span class="p">(</span><span class="n">Latitude</span><span class="p">,</span> <span class="n">Longitude</span><span class="p">)</span>
-    <span class="n">interact</span><span class="p">(</span><span class="n">tanggal</span><span class="p">,</span> <span class="n">t0</span><span class="o">=</span><span class="n">dari</span><span class="p">,</span> <span class="n">t1</span><span class="o">=</span><span class="n">sampai</span><span class="p">)</span>
+    <span class="n">interact</span><span class="p">(</span><span class="n">find</span><span class="p">,</span> <span class="n">t0</span><span class="o">=</span><span class="n">dari</span><span class="p">,</span> <span class="n">t1</span><span class="o">=</span><span class="n">sampai</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13204,7 +13208,7 @@ div#notebook {
     <span class="n">disabled</span><span class="o">=</span><span class="kc">False</span>
 <span class="p">)</span>
 
-<span class="n">interact</span><span class="p">(</span><span class="n">find</span><span class="p">,</span> <span class="n">Latitude</span><span class="o">=</span><span class="s1">&#39;7.83305556 S&#39;</span><span class="p">,</span> <span class="n">Longitude</span><span class="o">=</span><span class="s1">&#39;110.38305556 E&#39;</span><span class="p">)</span>
+<span class="n">interact</span><span class="p">(</span><span class="n">loc</span><span class="p">,</span> <span class="n">Latitude</span><span class="o">=</span><span class="s1">&#39;7.83305556 S&#39;</span><span class="p">,</span> <span class="n">Longitude</span><span class="o">=</span><span class="s1">&#39;110.38305556 E&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13236,7 +13240,7 @@ div#notebook {
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;function __main__.find(Latitude, Longitude)&gt;</pre>
+<pre>&lt;function __main__.loc(Latitude, Longitude)&gt;</pre>
 </div>
 
 </div>
