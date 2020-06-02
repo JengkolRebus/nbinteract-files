@@ -13121,13 +13121,14 @@ div#notebook {
 
   
 
-  <div class="
+  <div class="nbinteract-hide_in
       cell border-box-sizing code_cell rendered">
     <div class="input">
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># _jengkolrebus</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># nbi:hide_in</span>
+<span class="c1"># _jengkolrebus</span>
 <span class="c1"># Curup, Bengkulu</span>
 <span class="c1"># Juni 2020</span>
 </pre></div>
@@ -13141,20 +13142,21 @@ div#notebook {
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Rumus-yang-digunakan">Rumus yang digunakan<a class="anchor-link" href="#Rumus-yang-digunakan">&#182;</a></h3><p><img src="rumus.png">
 <em>sumber: <a href="http://www.astrosurf.com/luxorion/report-formulae.htm">Astrosurf.com</a></em></p>
-
+<p>Ukuran sensor dan panjang fokus dalam milimeter (mm).</p>
 </div>
 </div>
 </div>
 
   
 
-  <div class="
+  <div class="nbinteract-hide_in
       cell border-box-sizing code_cell rendered">
     <div class="input">
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">widgets</span><span class="p">,</span> <span class="n">interactive</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># nbi:hide_in</span>
+<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">widgets</span><span class="p">,</span> <span class="n">interactive</span>
 </pre></div>
 
     </div>
@@ -13162,23 +13164,17 @@ div#notebook {
 </div>
 
   </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Ukuran sensor dan panjang fokus dalam milimeter (mm).</p>
-
-</div>
-</div>
-</div>
 
   
 
-  <div class="
+  <div class="nbinteract-hide_in
       cell border-box-sizing code_cell rendered">
     <div class="input">
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">xsensor</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">FloatText</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="s1">&#39;8.6&#39;</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Sensor X: &#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># nbi:hide_in</span>
+<span class="n">xsensor</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">FloatText</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="s1">&#39;8.6&#39;</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Sensor X: &#39;</span><span class="p">)</span>
 <span class="n">ysensor</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">FloatText</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="s1">&#39;6.80&#39;</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Sensor Y: &#39;</span><span class="p">)</span>
 <span class="n">fTele</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">IntText</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="s1">&#39;900&#39;</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s1">&#39;F Teleskop: &#39;</span><span class="p">)</span>
 
@@ -13201,7 +13197,23 @@ div#notebook {
     
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;FoV CCD: &#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">xdeg</span><span class="p">)</span><span class="o">+</span><span class="sa">u</span><span class="s2">&quot;</span><span class="se">\N{DEGREE SIGN}</span><span class="s2">&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">xm</span><span class="p">))</span><span class="o">+</span><span class="s2">&quot;</span><span class="se">\&#39;</span><span class="s2">&quot;</span><span class="o">+</span><span class="s2">&quot;</span><span class="si">{:.2f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;</span><span class="se">\&quot;</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; x &#39;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">ydeg</span><span class="p">)</span><span class="o">+</span><span class="sa">u</span><span class="s2">&quot;</span><span class="se">\N{DEGREE SIGN}</span><span class="s2">&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">ym</span><span class="p">))</span><span class="o">+</span><span class="s2">&quot;</span><span class="se">\&#39;</span><span class="s2">&quot;</span><span class="o">+</span><span class="s2">&quot;</span><span class="si">{:.2f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ys</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;</span><span class="se">\&quot;</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
 
+    </div>
+</div>
+</div>
+
+  </div>
+
+  
+
+  <div class="nbinteract-hide_in
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># nbi:hide_in</span>
 <span class="n">interactive</span><span class="p">(</span><span class="n">fov</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">xsensor</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">ysensor</span><span class="p">,</span> <span class="n">f</span><span class="o">=</span><span class="n">fTele</span><span class="p">)</span>
 </pre></div>
 
@@ -13227,23 +13239,6 @@ div#notebook {
 
 </div>
 
-</div>
-</div>
-
-  </div>
-
-  
-
-  <div class="
-      cell border-box-sizing code_cell rendered">
-    <div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-    </div>
 </div>
 </div>
 
